@@ -1,23 +1,28 @@
+import React from 'react';
+import Card from './Card';
+import Sdata from './Sdata';
 
-function add(a,b) {
-    let sum = a+b;
-    return sum;
-}
 
-function sub(a,b) {
-    let sub = a-b;
-    return sub;
-}
 
-function mult(a,b) {
-    let mult = a*b;
-    return mult;
-}
+const App = () => (
+    <>
 
-function div(a,b) {
-    let div = a / b;
-    div = div.toFixed(2);
-    return div;
-}
-export {add, sub, mult, div};
+        <h1 className='heading_style'>List of top 5 Netflix series in 2020</h1>
+         { Sdata.map((val, index) => {
+             console.log(index);
+            return(
+        <Card
+            key={val.id}
+            imgsrc={val.imgsrc}
+            title={val.title}
+            sname={val.sname}
+            link={val.link}
+        />
+            );
+        } )}
+    </>
+   
+);
 
+
+export default App;
